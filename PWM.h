@@ -12,6 +12,8 @@
     #include <stdint.h>
     #include "tm4c123gh6pm.h"
 
+    #include "Port_Driver.h"
+
     /** Regidter mapping **/
 
     // CLK enable
@@ -210,10 +212,10 @@
         PWM_PD1_M0,
         PWM_PD1_M1,
         
-        PWM_PE0_M0,
-        PWM_PE0_M1,
-        PWM_PE1_M0,
-        PWM_PE1_M1,
+        PWM_PE4_M0,
+        PWM_PE4_M1,
+        PWM_PE5_M0,
+        PWM_PE5_M1,
 
         PWM_PF0,
         PWM_PF1,
@@ -229,7 +231,7 @@
          * -- GPIO pin using Port_Driver and set AFSEL for this pin
          */
 
-    void PWM_Gen_Init(PWM_MODULE pwm_module, PWM_GEN pwn_generator, PWM_DEVIDER pwm_devider, uint16_t load_value);
+    void PWM_Gen_Init(PWM_MODULE pwm_module, PWM_GEN pwn_generator, PWM_DEVIDER pwm_devider, PWM_OUTPUT_STATE pwm_output_state, uint16_t load_value);
         /**
          * This function only initialize PWM generator
          * -- initialize module clk
