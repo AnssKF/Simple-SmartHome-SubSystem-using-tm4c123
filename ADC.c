@@ -82,3 +82,21 @@ void ADC0_SET_CTL(uint32_t CTL_MUSK, enum SEQn seqN)
     }
 }
 
+void ADC1_SET_CTL(uint32_t CTL_MUSK, enum SEQn seqN)
+	{
+	switch (seqN)
+  {
+    case 0:
+			ADC1_SSCTL0_R |= CTL_MUSK;
+      break;
+    case 1:
+      ADC1_SSCTL1_R |= CTL_MUSK;
+      break;
+    case 2:
+      ADC1_SSCTL2_R |= CTL_MUSK;
+      break;
+    case 3:
+      ADC1_SSCTL3_R |= CTL_MUSK;
+      break;
+    }
+}
