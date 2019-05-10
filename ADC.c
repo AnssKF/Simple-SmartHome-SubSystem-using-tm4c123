@@ -57,3 +57,8 @@ void ADC0_SEQ_SEL_EN(uint32_t SEQ_SEL_EN_MUSK)
 { //enable the seq for ADC0
      ADC0_ACTSS_R |= SEQ_SEL_EN_MUSK; 
 }    
+
+void ADC1_SEQ_SEL_EN(uint32_t SEQ_SEL_EN_MUSK)
+{ //enable the seq for ADC1
+     ADC1_ACTSS_R |= SEQ_SEL_EN_MUSK;
+}
