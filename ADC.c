@@ -29,3 +29,24 @@ void ADC_Init( enum ADCn adcN, enum SEQn seqN, uint32_t SEQ_SEL_DIS_MUSK, uint32
 			ADC1_SET_CTL( CTL_MUSK, seqN );
 		}
 }
+
+
+void ADC_module(enum ADCn adcN){
+	//enable the clock of which ADC
+	switch (adcN)
+    { //switch case for defining which ADC
+    case 0:
+        SYSCTL_RCGCADC_R |= (1 << 0);
+				 break;
+		case 1:
+				SYSCTL_RCGCADC_R |= (1 << 1);
+				break;
+		default :
+			{
+				 SYSCTL_RCGCADC_R |= (1 << 0);
+				 SYSCTL_RCGCADC_R |= (1 << 1);
+			}
+			 break;
+		}
+		
+}
