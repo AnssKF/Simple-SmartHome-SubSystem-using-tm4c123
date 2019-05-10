@@ -29,3 +29,9 @@ void ADC_Init( enum ADCn adcN, enum SEQn seqN, uint32_t SEQ_SEL_DIS_MUSK, uint32
 			ADC1_SET_CTL( CTL_MUSK, seqN );
 		}
 }
+
+
+float Tempreature_Value(uint32_t FIFOn) //ADC0_SSFIFO3_R
+{
+	return (147.5 - (247.5*FIFOn)/4096);
+}
