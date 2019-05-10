@@ -62,3 +62,23 @@ void ADC1_SEQ_SEL_EN(uint32_t SEQ_SEL_EN_MUSK)
 { //enable the seq for ADC1
      ADC1_ACTSS_R |= SEQ_SEL_EN_MUSK;
 }
+
+void ADC0_SET_CTL(uint32_t CTL_MUSK, enum SEQn seqN)
+	{
+	switch (seqN)
+  {
+    case 0:
+			ADC0_SSCTL0_R |= CTL_MUSK;
+      break;
+    case 1:
+      ADC0_SSCTL1_R |= CTL_MUSK;
+      break;
+    case 2:
+      ADC0_SSCTL2_R |= CTL_MUSK;
+      break;
+    case 3:
+      ADC0_SSCTL3_R |= CTL_MUSK;
+      break;
+    }
+}
+
