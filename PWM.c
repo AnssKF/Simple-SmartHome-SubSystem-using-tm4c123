@@ -509,3 +509,337 @@ void PWM_Gen_Init(PWM_MODULE pwm_module, PWM_GEN pwn_generator, PWM_DEVIDER pwm_
         break;
     }
 }
+
+
+//duty_cycle in percentage
+
+void PWM_Write(PWM_PIN pwm_pin,uint16_t duty_cycle)
+{
+    if(pwm_pin==PWM_PA6)
+    {
+      PWM_MODULE1_GEN1_LOAD_R=load_value;  
+     
+        if(duty_cycle==100)
+        {
+         PWM_MODULE1_GEN1_CMPA_R=1;//100%//max
+        }
+        else if(duty_cycle==0)
+        {
+         PWM_MODULE1_GEN1_CMPA_R=load_value-1;//0%//min
+        }
+        else
+        {
+            PWM_MODULE1_GEN1_CMPA_R=(uint32_t)(load_value*(duty_cycle/100.0)-1);
+        }
+    }
+
+    else if(pwm_pin==PWM_PA7)
+    {
+        PWM_MODULE1_GEN1_LOAD_R=load_value; 
+      if(duty_cycle==100)
+      {
+         PWM_MODULE1_GEN1_CMPA_R=1;
+      }
+      else if(duty_cycle==0)
+      {
+         PWM_MODULE1_GEN1_CMPA_R=load_value-1;
+      }
+      else
+      {
+         PWM_MODULE1_GEN1_CMPA_R=(uint32_t)(load_value*(duty_cycle/100.0)-1);
+      }
+    }
+    else if(pwm_pin==PWM_PB4)
+    {
+        PWM_MODULE0_GEN1_LOAD_R=load_value; 
+      if(duty_cycle==100)
+      {
+         PWM_MODULE0_GEN1_CMPA_R=1;
+      }
+      else if(duty_cycle==0)
+      {
+         PWM_MODULE0_GEN1_CMPA_R=load_value-1;
+      }
+      else
+      {
+         PWM_MODULE0_GEN1_CMPA_R=(uint32_t)(load_value*(duty_cycle/100.0)-1);
+      }
+    }
+    else  if(pwm_pin==PWM_PB5)
+    {
+        PWM_MODULE0_GEN1_LOAD_R=load_value; 
+      if(duty_cycle==100)
+      {
+         PWM_MODULE0_GEN1_CMPA_R=1;
+      }
+      else if(duty_cycle==0)
+      {
+         PWM_MODULE0_GEN1_CMPA_R=load_value-1;
+      }
+      else
+      {
+         PWM_MODULE0_GEN1_CMPA_R=(uint32_t)(load_value*(duty_cycle/100.0)-1);
+      }
+    }
+    else  if(pwm_pin==PWM_PB6)
+    {
+        PWM_MODULE0_GEN0_LOAD_R=load_value; 
+      if(duty_cycle==100)
+      {
+         PWM_MODULE0_GEN0_CMPA_R=1;
+      }
+      else if(duty_cycle==0)
+      {
+         PWM_MODULE0_GEN0_CMPA_R=load_value-1;
+      }
+      else
+      {
+         PWM_MODULE0_GEN0_CMPA_R=(uint32_t)(load_value*(duty_cycle/100.0)-1);
+      }
+    }
+    else  if(pwm_pin==PWM_PB7)
+    {
+        PWM_MODULE0_GEN0_LOAD_R=load_value; 
+      if(duty_cycle==100)
+      {
+         PWM_MODULE0_GEN0_CMPA_R=1;
+      }
+      else if(duty_cycle==0)
+      {
+         PWM_MODULE0_GEN0_CMPA_R=load_value-1;
+      }
+      else
+      {
+         PWM_MODULE0_GEN0_CMPA_R=(uint32_t)(load_value*(duty_cycle/100.0)-1);
+      }
+    }
+    else  if(pwm_pin==PWM_PC4)
+    {
+        PWM_MODULE0_GEN3_LOAD_R=load_value; 
+      if(duty_cycle==100)
+      {
+         PWM_MODULE0_GEN3_CMPA_R=1;
+      }
+      else if(duty_cycle==0)
+      {
+         PWM_MODULE0_GEN3_CMPA_R=load_value-1;
+      }
+      else
+      {
+         PWM_MODULE0_GEN3_CMPA_R=(uint32_t)(load_value*(duty_cycle/100.0)-1);
+      }
+    }
+    else  if(pwm_pin==PWM_PC5)
+    {
+        PWM_MODULE0_GEN3_LOAD_R=load_value; 
+      if(duty_cycle==100)
+      {
+         PWM_MODULE0_GEN3_CMPA_R=1;
+      }
+      else if(duty_cycle==0)
+      {
+         PWM_MODULE0_GEN3_CMPA_R=load_value-1;
+      }
+      else
+      {
+         PWM_MODULE0_GEN3_CMPA_R=(uint32_t)(load_value*(duty_cycle/100.0)-1);
+      }
+    }
+    else if(pwm_pin==PWM_PD0_M0)
+    {
+        PWM_MODULE0_GEN3_LOAD_R=load_value; 
+      if(duty_cycle==100)
+      {
+         PWM_MODULE0_GEN3_CMPA_R=1;
+      }
+      else if(duty_cycle==0)
+      {
+         PWM_MODULE0_GEN3_CMPA_R=load_value-1;
+      }
+      else
+      {
+         PWM_MODULE0_GEN3_CMPA_R=(uint32_t)(load_value*(duty_cycle/100.0)-1);
+      }
+    }
+    else if(pwm_pin==PWM_PD0_M1)
+    {
+        PWM_MODULE1_GEN0_LOAD_R=load_value; 
+      if(duty_cycle==100)
+      {
+         PWM_MODULE1_GEN0_CMPA_R=1;
+      }
+      else if(duty_cycle==0)
+      {
+         PWM_MODULE1_GEN0_CMPA_R=load_value-1;
+      }
+      else
+      {
+         PWM_MODULE1_GEN0_CMPA_R=(uint32_t)(load_value*(duty_cycle/100.0)-1);
+      }
+    }
+    else if(pwm_pin==PWM_PD1_M0)
+    {
+        PWM_MODULE0_GEN3_LOAD_R=load_value; 
+      if(duty_cycle==100)
+      {
+         PWM_MODULE0_GEN3_CMPA_R=1;
+      }
+      else if(duty_cycle==0)
+      {
+         PWM_MODULE0_GEN3_CMPA_R=load_value-1;
+      }
+      else
+      {
+         PWM_MODULE0_GEN3_CMPA_R=(uint32_t)(load_value*(duty_cycle/100.0)-1);
+      }
+    }
+    else  if(pwm_pin==PWM_PD1_M1)
+    {
+        PWM_MODULE1_GEN0_LOAD_R=load_value; 
+      if(duty_cycle==100)
+      {
+         PWM_MODULE1_GEN0_CMPA_R=1;
+      }
+      else if(duty_cycle==0)
+      {
+         PWM_MODULE1_GEN0_CMPA_R=load_value-1;
+      }
+      else
+      {
+         PWM_MODULE1_GEN0_CMPA_R=(uint32_t)(load_value*(duty_cycle/100.0)-1);
+      }
+    }
+    else  if(pwm_pin==PWM_PE0_M0)
+    {
+        PWM_MODULE0_GEN2_LOAD_R=load_value; 
+      if(duty_cycle==100)
+      {
+         PWM_MODULE0_GEN2_CMPA_R=1;
+      }
+      else if(duty_cycle==0)
+      {
+         PWM_MODULE0_GEN2_CMPA_R=load_value-1;
+      }
+      else
+      {
+         PWM_MODULE0_GEN2_CMPA_R=(uint32_t)(load_value*(duty_cycle/100.0)-1);
+      }
+    }
+    else  if(pwm_pin== PWM_PE0_M1)
+    {
+        PWM_MODULE1_GEN1_LOAD_R=load_value; 
+      if(duty_cycle==100)
+      {
+         PWM_MODULE1_GEN1_CMPA_R=1;
+      }
+      else if(duty_cycle==0)
+      {
+         PWM_MODULE1_GEN1_CMPA_R=load_value-1;
+      }
+      else
+      {
+         PWM_MODULE1_GEN1_CMPA_R=(uint32_t)(load_value*(duty_cycle/100.0)-1);
+      }
+    }
+    else  if(pwm_pin== PWM_PE1_M0)
+    {
+        PWM_MODULE0_GEN2_LOAD_R=load_value; 
+      if(duty_cycle==100)
+      {
+         PWM_MODULE0_GEN2_CMPA_R=1;
+      }
+      else if(duty_cycle==0)
+      {
+         PWM_MODULE0_GEN2_CMPA_R=load_value-1;
+      }
+      else
+      {
+         PWM_MODULE0_GEN2_CMPA_R=(uint32_t)(load_value*(duty_cycle/100.0)-1);
+      }
+    }
+    else  if(pwm_pin==PWM_PE1_M1)
+    {
+        PWM_MODULE1_GEN1_LOAD_R=load_value; 
+      if(duty_cycle==100)
+      {
+         PWM_MODULE1_GEN1_CMPA_R=1;
+      }
+      else if(duty_cycle==0)
+      {
+         PWM_MODULE1_GEN1_CMPA_R=load_value-1;
+      }
+      else
+      {
+         PWM_MODULE1_GEN1_CMPA_R=(uint32_t)(load_value*(duty_cycle/100.0)-1);
+      }
+    }
+      else  if(pwm_pin==PWM_PF0)
+    {
+        PWM_MODULE1_GEN2_LOAD_R=load_value; 
+      if(duty_cycle==100)
+      {
+         PWM_MODULE1_GEN2_CMPA_R=1;
+      }
+      else if(duty_cycle==0)
+      {
+         PWM_MODULE1_GEN2_CMPA_R=load_value-1;
+      }
+      else
+      {
+         PWM_MODULE1_GEN2_CMPA_R=(uint32_t)(load_value*(duty_cycle/100.0)-1);
+      }
+    }
+    else  if(pwm_pin==PWM_PF1)
+    {
+        PWM_MODULE1_GEN2_LOAD_R=load_value; 
+      if(duty_cycle==100)
+      {
+         PWM_MODULE1_GEN2_CMPA_R=1;
+      }
+      else if(duty_cycle==0)
+      {
+         PWM_MODULE1_GEN2_CMPA_R=load_value-1;
+      }
+      else
+      {
+         PWM_MODULE1_GEN2_CMPA_R=(uint32_t)(load_value*(duty_cycle/100.0)-1);
+      }
+    }
+    else  if(pwm_pin==PWM_PF2)
+    {
+        PWM_MODULE1_GEN3_LOAD_R=load_value; 
+      if(duty_cycle==100)
+      {
+         PWM_MODULE1_GEN3_CMPA_R=1;
+      }
+      else if(duty_cycle==0)
+      {
+         PWM_MODULE1_GEN3_CMPA_R=load_value-1;
+      }
+      else
+      {
+         PWM_MODULE1_GEN3_CMPA_R=(uint32_t)(load_value*(duty_cycle/100.0)-1);
+      }
+    }
+    else  if(pwm_pin==PWM_PF3)
+    {
+        PWM_MODULE1_GEN3_LOAD_R=load_value; 
+      if(duty_cycle==100)
+      {
+         PWM_MODULE1_GEN3_CMPA_R=1;
+      }
+      else if(duty_cycle==0)
+      {
+         PWM_MODULE1_GEN3_CMPA_R=load_value-1;
+      }
+      else
+      {
+         PWM_MODULE1_GEN3_CMPA_R=(uint32_t)(load_value*(duty_cycle/100.0)-1);
+      }
+    }
+}
+
+
+
+
+
