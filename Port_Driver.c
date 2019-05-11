@@ -3,7 +3,7 @@
 void Port_Init(uint8_t port_index)
 {
     volatile uint8_t delay;
-    SETBIT(SYSCTL_RCGCGPIO_R, port_index); // Port CLK Enable
+    SET_BIT(SYSCTL_RCGCGPIO_R, port_index); // Port CLK Enable
     delay = 5;
     switch (port_index)
     {

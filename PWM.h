@@ -91,6 +91,9 @@
     #define PWM_GEN_CTL_INVERT_M                        0x1 // Invert PWM
     #define PWM_GEN_CTL_DRIVE_LOW_M                     0x2 // Drive Low
     #define PWM_GEN_CTL_DRIVE_HIGH_M                    0x3 // Drive High
+    //register values
+    #define High_on_Load_Low_Match                      0x8D
+    #define Low_on_Load_High_Match                      0xD8 //not sure :'
 
     // Load reg
     #define PWM_MODULE0_GEN0_LOAD_R                     PWM0_0_LOAD_R

@@ -178,3 +178,340 @@ void PWM_Pin_Init(uint8_t port_index, PWM_PIN pwm_pin, PWM_DEVIDER pwm_devider, 
     break;
     }
 }
+
+void PWM_Gen_Init(PWM_MODULE pwm_module, PWM_GEN pwn_generator, PWM_DEVIDER pwm_devider, PWM_OUTPUT_STATE pwm_output_state, uint16_t load_value){
+    SET_MASK(SYSCTL_RCGC0_R,0x100000);//run mode clock ->pwm
+    
+    SET_MASK(PWM_CLK_DEVIDER_CTL_R,PWM_CLK_DEVIDER_EN_M)
+    switch (pwm_devider)
+    {
+    case PWM_DEV_BY_2 :
+        SET_MASK(PWM_CLK_DEVIDER_CTL_R,PWM_CLK_DEVIDER_BY_2_M);
+        break;
+    case PWM_DEV_BY_4 :
+        SET_MASK(PWM_CLK_DEVIDER_CTL_R,PWM_CLK_DEVIDER_BY_4_M);
+        break;
+    case PWM_DEV_BY_8 :
+        SET_MASK(PWM_CLK_DEVIDER_CTL_R,PWM_CLK_DEVIDER_BY_8_M);
+        break;
+    case PWM_DEV_BY_16 :
+        SET_MASK(PWM_CLK_DEVIDER_CTL_R,PWM_CLK_DEVIDER_BY_16_M);
+        break;
+    case PWM_DEV_BY_32 :
+        SET_MASK(PWM_CLK_DEVIDER_CTL_R,PWM_CLK_DEVIDER_BY_32_M);
+        break;
+    case PWM_DEV_BY_64 :
+        SET_MASK(PWM_CLK_DEVIDER_CTL_R,PWM_CLK_DEVIDER_BY_64_M);
+        break;
+    
+    default:
+        SET_MASK(PWM_CLK_DEVIDER_CTL_R,PWM_CLK_DEVIDER_BY_64_M);
+        break;
+    }
+    
+    switch(pwm_module){
+        case PWM_M0 :
+           SET_MASK(PWM_SYSCTL_R,PWM_MODULE0_CLK_EN_M); 
+            switch (pwn_generator)
+            {
+            case PWM_G0_A:
+                SET_MASK(PWM_MODULE0_GEN0_CTL_R,0x0);
+                switch (pwm_output_state)
+                {
+                case PWM_HIGH_ON_LOAD_LOW_ON_MATCH:
+                    SET_MASK(PWM_MODULE0_GEN0_A_CTL_R,High_on_Load_Low_Match);
+                    break;
+                case PWM_LOW_ON_LOAD_HIGH_ON_MATCH:
+                    SET_MASK(PWM_MODULE0_GEN0_A_CTL_R,Low_on_Load_High_Match);
+                    break;
+                
+                default:
+                    break;
+                }
+                SET_MASK(PWM_MODULE0_GEN0_LOAD_R ,load_value);
+                SET_MASK(PWM_MODULE0_GEN0_CTL_R,PWM_GEN0_CTL_EN_M);
+                break;
+            case PWM_G0_B:
+                SET_MASK(PWM_MODULE0_GEN0_CTL_R,0x0);
+                switch (pwm_output_state)
+                {
+                case PWM_HIGH_ON_LOAD_LOW_ON_MATCH:
+                    SET_MASK(PWM_MODULE0_GEN0_B_CTL_R,High_on_Load_Low_Match);
+                    break;
+                case PWM_LOW_ON_LOAD_HIGH_ON_MATCH:
+                    SET_MASK(PWM_MODULE0_GEN0_B_CTL_R,Low_on_Load_High_Match);
+                    break;
+                
+                default:
+                    break;
+                }
+                SET_MASK(PWM_MODULE0_GEN0_LOAD_R ,load_value);
+                SET_MASK(PWM_MODULE0_GEN0_CTL_R,PWM_GEN0_CTL_EN_M);
+                break;
+
+            case PWM_G1_A:
+                SET_MASK(PWM_MODULE0_GEN1_CTL_R,0x0);
+                switch (pwm_output_state)
+                {
+                case PWM_HIGH_ON_LOAD_LOW_ON_MATCH:
+                    SET_MASK(PWM_MODULE0_GEN1_A_CTL_R,High_on_Load_Low_Match);
+                    break;
+                case PWM_LOW_ON_LOAD_HIGH_ON_MATCH:
+                    SET_MASK(PWM_MODULE0_GEN1_A_CTL_R,Low_on_Load_High_Match);
+                    break;
+                
+                default:
+                    break;
+                }
+                SET_MASK(PWM_MODULE0_GEN1_LOAD_R ,load_value);
+                SET_MASK(PWM_MODULE0_GEN1_CTL_R,PWM_GEN1_CTL_EN_M);
+                break;
+            case PWM_G1_B:
+                SET_MASK(PWM_MODULE0_GEN1_CTL_R,0x0);
+                switch (pwm_output_state)
+                {
+                case PWM_HIGH_ON_LOAD_LOW_ON_MATCH:
+                    SET_MASK(PWM_MODULE0_GEN1_B_CTL_R,High_on_Load_Low_Match);
+                    break;
+                case PWM_LOW_ON_LOAD_HIGH_ON_MATCH:
+                    SET_MASK(PWM_MODULE0_GEN1_B_CTL_R,Low_on_Load_High_Match);
+                    break;
+                
+                default:
+                    break;
+                }
+                SET_MASK(PWM_MODULE0_GEN1_LOAD_R ,load_value);
+                SET_MASK(PWM_MODULE0_GEN1_CTL_R,PWM_GEN1_CTL_EN_M);
+                break;
+            case PWM_G2_A:
+                SET_MASK(PWM_MODULE0_GEN2_CTL_R,0x0);
+                switch (pwm_output_state)
+                {
+                case PWM_HIGH_ON_LOAD_LOW_ON_MATCH:
+                    SET_MASK(PWM_MODULE0_GEN2_A_CTL_R,High_on_Load_Low_Match);
+                    break;
+                case PWM_LOW_ON_LOAD_HIGH_ON_MATCH:
+                    SET_MASK(PWM_MODULE0_GEN2_A_CTL_R,Low_on_Load_High_Match);
+                    break;
+                
+                default:
+                    break;
+                }
+                SET_MASK(PWM_MODULE0_GEN2_LOAD_R ,load_value);
+                SET_MASK(PWM_MODULE0_GEN2_CTL_R,PWM_GEN2_CTL_EN_M);
+                break;
+            case PWM_G2_B:
+                SET_MASK(PWM_MODULE0_GEN2_CTL_R,0x0);
+                switch (pwm_output_state)
+                {
+                case PWM_HIGH_ON_LOAD_LOW_ON_MATCH:
+                    SET_MASK(PWM_MODULE0_GEN2_B_CTL_R,High_on_Load_Low_Match);
+                    break;
+                case PWM_LOW_ON_LOAD_HIGH_ON_MATCH:
+                    SET_MASK(PWM_MODULE0_GEN2_B_CTL_R,Low_on_Load_High_Match);
+                    break;
+                
+                default:
+                    break;
+                }
+                SET_MASK(PWM_MODULE0_GEN2_LOAD_R ,load_value);
+                SET_MASK(PWM_MODULE0_GEN2_CTL_R,PWM_GEN2_CTL_EN_M);
+                break;
+            case PWM_G3_A:
+                SET_MASK(PWM_MODULE0_GEN3_CTL_R,0x0);
+                switch (pwm_output_state)
+                {
+                case PWM_HIGH_ON_LOAD_LOW_ON_MATCH:
+                    SET_MASK(PWM_MODULE0_GEN3_A_CTL_R,High_on_Load_Low_Match);
+                    break;
+                case PWM_LOW_ON_LOAD_HIGH_ON_MATCH:
+                    SET_MASK(PWM_MODULE0_GEN3_A_CTL_R,Low_on_Load_High_Match);
+                    break;
+                
+                default:
+                    break;
+                }
+                SET_MASK(PWM_MODULE0_GEN3_LOAD_R ,load_value);
+                break;
+            case PWM_G3_B:
+                SET_MASK(PWM_MODULE0_GEN3_CTL_R,0x0);
+                switch (pwm_output_state)
+                {
+                case PWM_HIGH_ON_LOAD_LOW_ON_MATCH:
+                    SET_MASK(PWM_MODULE0_GEN3_B_CTL_R,High_on_Load_Low_Match);
+                    break;
+                case PWM_LOW_ON_LOAD_HIGH_ON_MATCH:
+                    SET_MASK(PWM_MODULE0_GEN3_B_CTL_R,Low_on_Load_High_Match);
+                    break;
+                
+                default:
+                    break;
+                }
+                SET_MASK(PWM_MODULE0_GEN3_LOAD_R ,load_value);
+                SET_MASK(PWM_MODULE0_GEN3_CTL_R,PWM_GEN3_CTL_EN_M);
+                break;
+            
+            default:
+                break;
+            }
+        break;
+
+        case PWM_M1 :
+           SET_MASK(PWM_SYSCTL_R,PWM_MODULE1_CLK_EN_M); 
+            switch (pwn_generator)
+            {
+            case PWM_G0_A:
+                SET_MASK(PWM_MODULE1_GEN0_CTL_R,0x0);
+                switch (pwm_output_state)
+                {
+                case PWM_HIGH_ON_LOAD_LOW_ON_MATCH:
+                    SET_MASK(PWM_MODULE1_GEN0_A_CTL_R,High_on_Load_Low_Match);
+                    break;
+                case PWM_LOW_ON_LOAD_HIGH_ON_MATCH:
+                    SET_MASK(PWM_MODULE1_GEN0_A_CTL_R,Low_on_Load_High_Match);
+                    break;
+                
+                default:
+                    break;
+                }
+                SET_MASK(PWM_MODULE1_GEN0_LOAD_R ,load_value);
+                SET_MASK(PWM_MODULE1_GEN0_CTL_R,PWM_GEN0_CTL_EN_M);
+                break;
+            case PWM_G0_B:
+                SET_MASK(PWM_MODULE1_GEN0_CTL_R,0x0);
+                switch (pwm_output_state)
+                {
+                case PWM_HIGH_ON_LOAD_LOW_ON_MATCH:
+                    SET_MASK(PWM_MODULE1_GEN0_B_CTL_R,High_on_Load_Low_Match);
+                    break;
+                case PWM_LOW_ON_LOAD_HIGH_ON_MATCH:
+                    SET_MASK(PWM_MODULE1_GEN0_B_CTL_R,Low_on_Load_High_Match);
+                    break;
+                
+                default:
+                    break;
+                }
+                SET_MASK(PWM_MODULE1_GEN0_LOAD_R ,load_value);
+                SET_MASK(PWM_MODULE1_GEN0_CTL_R,PWM_GEN0_CTL_EN_M);
+                break;
+
+            case PWM_G1_A:
+                SET_MASK(PWM_MODULE1_GEN1_CTL_R,0x0);
+                switch (pwm_output_state)
+                {
+                case PWM_HIGH_ON_LOAD_LOW_ON_MATCH:
+                    SET_MASK(PWM_MODULE1_GEN1_A_CTL_R,High_on_Load_Low_Match);
+                    break;
+                case PWM_LOW_ON_LOAD_HIGH_ON_MATCH:
+                    SET_MASK(PWM_MODULE1_GEN1_A_CTL_R,Low_on_Load_High_Match);
+                    break;
+                
+                default:
+                    break;
+                }
+                SET_MASK(PWM_MODULE1_GEN1_LOAD_R ,load_value);
+                SET_MASK(PWM_MODULE1_GEN1_CTL_R,PWM_GEN1_CTL_EN_M);
+                break;
+            case PWM_G1_B:
+                SET_MASK(PWM_MODULE1_GEN1_CTL_R,0x0);
+                switch (pwm_output_state)
+                {
+                case PWM_HIGH_ON_LOAD_LOW_ON_MATCH:
+                    SET_MASK(PWM_MODULE1_GEN1_B_CTL_R,High_on_Load_Low_Match);
+                    break;
+                case PWM_LOW_ON_LOAD_HIGH_ON_MATCH:
+                    SET_MASK(PWM_MODULE1_GEN1_B_CTL_R,Low_on_Load_High_Match);
+                    break;
+                
+                default:
+                    break;
+                }
+                SET_MASK(PWM_MODULE1_GEN1_LOAD_R ,load_value);
+                SET_MASK(PWM_MODULE1_GEN1_CTL_R,PWM_GEN1_CTL_EN_M);
+                break;
+            case PWM_G2_A:
+                SET_MASK(PWM_MODULE1_GEN2_CTL_R,0x0);
+                switch (pwm_output_state)
+                {
+                case PWM_HIGH_ON_LOAD_LOW_ON_MATCH:
+                    SET_MASK(PWM_MODULE1_GEN2_A_CTL_R,High_on_Load_Low_Match);
+                    break;
+                case PWM_LOW_ON_LOAD_HIGH_ON_MATCH:
+                    SET_MASK(PWM_MODULE1_GEN2_A_CTL_R,Low_on_Load_High_Match);
+                    break;
+                
+                default:
+                    break;
+                }
+                SET_MASK(PWM_MODULE1_GEN2_LOAD_R ,load_value);
+                SET_MASK(PWM_MODULE1_GEN2_CTL_R,PWM_GEN2_CTL_EN_M);
+                break;
+            case PWM_G2_B:
+                SET_MASK(PWM_MODULE1_GEN2_CTL_R,0x0);
+                switch (pwm_output_state)
+                {
+                case PWM_HIGH_ON_LOAD_LOW_ON_MATCH:
+                    SET_MASK(PWM_MODULE1_GEN2_B_CTL_R,High_on_Load_Low_Match);
+                    break;
+                case PWM_LOW_ON_LOAD_HIGH_ON_MATCH:
+                    SET_MASK(PWM_MODULE1_GEN2_B_CTL_R,Low_on_Load_High_Match);
+                    break;
+                
+                default:
+                    break;
+                }
+                SET_MASK(PWM_MODULE1_GEN2_LOAD_R ,load_value);
+                SET_MASK(PWM_MODULE1_GEN2_CTL_R,PWM_GEN2_CTL_EN_M);
+                break;
+            case PWM_G3_A:
+                SET_MASK(PWM_MODULE1_GEN3_CTL_R,0x0);
+                switch (pwm_output_state)
+                {
+                case PWM_HIGH_ON_LOAD_LOW_ON_MATCH:
+                    SET_MASK(PWM_MODULE1_GEN3_A_CTL_R,High_on_Load_Low_Match);
+                    break;
+                case PWM_LOW_ON_LOAD_HIGH_ON_MATCH:
+                    SET_MASK(PWM_MODULE1_GEN3_A_CTL_R,Low_on_Load_High_Match);
+                    break;
+                
+                default:
+                    break;
+                }
+                SET_MASK(PWM_MODULE1_GEN3_LOAD_R ,load_value);
+                SET_MASK(PWM_MODULE1_GEN3_CTL_R,PWM_GEN3_CTL_EN_M);
+                break;
+            case PWM_G3_B:
+                SET_MASK(PWM_MODULE1_GEN3_CTL_R,0x0);
+                switch (pwm_output_state)
+                {
+                case PWM_HIGH_ON_LOAD_LOW_ON_MATCH:
+                    SET_MASK(PWM_MODULE1_GEN3_B_CTL_R,High_on_Load_Low_Match);
+                    break;
+                case PWM_LOW_ON_LOAD_HIGH_ON_MATCH:
+                    SET_MASK(PWM_MODULE1_GEN3_B_CTL_R,Low_on_Load_High_Match);
+                    break;
+                
+                default:
+                    break;
+                }
+                SET_MASK(PWM_MODULE1_GEN3_LOAD_R ,load_value);
+                SET_MASK(PWM_MODULE1_GEN3_CTL_R,PWM_GEN3_CTL_EN_M);
+                break;
+            
+            default:
+                break;
+            }
+        break;
+        default:
+            break;
+    }
+
+
+
+
+
+
+    
+
+
+}
