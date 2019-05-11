@@ -29,7 +29,7 @@
 
 #define GET_BIT(REG, BIT) ((REG & (1 << BIT)) >> BIT)
 
-#define SET_MASK(REG, MASK) (REG != MASK)
+#define SET_MASK(REG, MASK) (REG |= MASK)
 
 #define CLEAR_MASK(REG, MASK) (REG &= (~MASK))
 
