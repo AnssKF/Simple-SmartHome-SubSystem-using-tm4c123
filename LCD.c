@@ -1,5 +1,7 @@
+#include "LCD.h"
+
 void LCD_DisplayChar(uint8_t Data)
-	{
+{
 		/* RW  Should be 0  and RS should be 1 when Writing Data to LCD */
 		SET_BIT(LCD_Control_reg_OP,RS);
 		CLEAR_BIT(LCD_Control_reg_OP,RW);
