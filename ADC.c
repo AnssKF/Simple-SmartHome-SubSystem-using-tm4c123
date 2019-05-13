@@ -161,3 +161,40 @@ void ADC1_selec_DIS_SEQ(uint32_t SEQ_SEL_DIS_MUSK)
  {  //which sequencer for ADC1
 	ADC1_ACTSS_R &= ~ SEQ_SEL_DIS_MUSK;
 }
+void ADC0_SEL_IN(uint32_t CH_MUSK, enum SEQn seqN) 
+{  //which Input Channel for ADC0
+	switch (seqN)
+  {
+    case 0:
+			ADC0_SSMUX0_R |= CH_MUSK;
+      break;
+    case 1:
+      ADC0_SSMUX1_R |= CH_MUSK;
+      break;
+    case 2:
+      ADC0_SSMUX2_R |= CH_MUSK;
+      break;
+    case 3:
+      ADC0_SSMUX3_R |= CH_MUSK;
+      break;
+    }
+}
+
+void ADC1_SEL_IN(uint32_t CH_MUSK,  enum SEQn seqN)
+{ //which Input Channel for ADC1
+	  switch (seqN)
+  {
+    case 0:
+			ADC1_SSMUX0_R |= CH_MUSK;
+      break;
+    case 1:
+      ADC1_SSMUX1_R |= CH_MUSK;
+      break;
+    case 2:
+      ADC1_SSMUX2_R |= CH_MUSK;
+      break;
+    case 3:
+      ADC1_SSMUX3_R |= CH_MUSK;
+      break;
+    }
+}
