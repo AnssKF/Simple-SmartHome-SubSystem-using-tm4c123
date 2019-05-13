@@ -139,3 +139,25 @@ void ADC1_TAKE_SAMPLE(uint32_t seq_musk)
 	
 	ADC1_PSSI_R |= seq_musk;
 }
+
+void ADC0_select_Trigger(uint32_t which_trigger)
+{  
+	ADC0_EMUX_R  |= which_trigger;
+}
+
+
+void ADC1_select_Trigger(uint32_t which_trigger)
+{  
+	  ADC1_EMUX_R  |= which_trigger;
+}
+void ADC0_selec_DIS_SEQ(uint32_t SEQ_SEL_DIS_MUSK)
+{  //which sequencer for ADC0
+		ADC0_ACTSS_R &= ~ SEQ_SEL_DIS_MUSK;
+}
+
+
+
+void ADC1_selec_DIS_SEQ(uint32_t SEQ_SEL_DIS_MUSK)
+ {  //which sequencer for ADC1
+	ADC1_ACTSS_R &= ~ SEQ_SEL_DIS_MUSK;
+}
