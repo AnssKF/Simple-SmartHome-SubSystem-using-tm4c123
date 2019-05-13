@@ -17,5 +17,9 @@ typedef enum{
 void SERVO_Init();
 
 void SERVO_Rotate(uint8_t rotate_degree, SERVO_DIRECTION direction);
+/**
+*   DC = (degree/18 + 10)%
+*   PWM_Write(PWM_PIN pwm_pin, uint16_t duty_cycle)
+*/
 
 #endif

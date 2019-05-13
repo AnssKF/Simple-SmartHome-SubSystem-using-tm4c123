@@ -3,38 +3,38 @@
 void LCD_init(void)
 {		
 	  /*Initialize used ports*/
-		port_init (porta);
-		port_init (portb);
+		Port_Init (PORTA);
+		Port_Init (PORTB);
 	
-	  /* Set The Control Pins Direction to Output */
-		SetPinDir(porta,RS,output);
-		SetPinDir(porta,RW,output);
-		SetPinDir(porta,E,output);
+	  /* Set The Control Pins Direction to PORT_PIN_OUT */
+		Port_SetPinDirection(PORTA,(1<<RS),PORT_PIN_OUT);
+		Port_SetPinDirection(PORTA,(1<<RW),PORT_PIN_OUT);
+		Port_SetPinDirection(PORTA,(1<<E),PORT_PIN_OUT);
  	
 		#if eight_bitdata
-			/* Set the Direction of the 8 Data pins to Output */
-		SetPinDir(portb,D0,output);
-		SetPinDir(portb,D1,output);
-		SetPinDir(portb,D2,output);
-		SetPinDir(portb,D3,output);
-		SetPinDir(portb,D4,output);
-		SetPinDir(portb,D5,output);
-		SetPinDir(portb,D6,output);
-		SetPinDir(portb,D7,output);
+			/* Set the Direction of the 8 Data pins to PORT_PIN_OUT */
+		Port_SetPinDirection(PORTB,(1<<D0),PORT_PIN_OUT);
+		Port_SetPinDirection(PORTB,(1<<D1),PORT_PIN_OUT);
+		Port_SetPinDirection(PORTB,(1<<D2),PORT_PIN_OUT);
+		Port_SetPinDirection(PORTB,(1<<D3),PORT_PIN_OUT);
+		Port_SetPinDirection(PORTB,(1<<D4),PORT_PIN_OUT);
+		Port_SetPinDirection(PORTB,(1<<D5),PORT_PIN_OUT);
+		Port_SetPinDirection(PORTB,(1<<D6),PORT_PIN_OUT);
+		Port_SetPinDirection(PORTB,(1<<D7),PORT_PIN_OUT);
 		#else
 			
 			#ifdef Upper_Data_port
 				/* Set The Direction of The Upper Pins to OP*/
-				SetPinDir(portb,D4,output);
-				SetPinDir(portb,D5,output);
-				SetPinDir(portb,D6,output);
-				SetPinDir(portb,D7,output);
+				Port_SetPinDirection(PORTB,(1<<D4),PORT_PIN_OUT);
+				Port_SetPinDirection(PORTB,(1<<D5),PORT_PIN_OUT);
+				Port_SetPinDirection(PORTB,(1<<D6),PORT_PIN_OUT);
+				Port_SetPinDirection(PORTB,(1<<D7),PORT_PIN_OUT);
 			#else
 				/* Set The Direction of The LOWER Pins to OP*/
-				SetPinDir(portb,D0,output);
-				SetPinDir(portb,D1,output);
-				SetPinDir(portb,D2,output);
-				SetPinDir(portb,D3,output);
+				Port_SetPinDirection(PORTB,(1<<D0),PORT_PIN_OUT);
+				Port_SetPinDirection(PORTB,(1<<D1),PORT_PIN_OUT);
+				Port_SetPinDirection(PORTB,(1<<D2),PORT_PIN_OUT);
+				Port_SetPinDirection(PORTB,(1<<D3),PORT_PIN_OUT);
 			#endif
 		Send_instruction(Return_Home);
 		#endif
@@ -176,7 +176,7 @@ void LCD_DisplayFloat(float data)
 	  LCD_DisplayString(result1);              //Display result
 }
 
-void LCD_DisplayInt(uint32_t data)
+void LCD_DisplayInt(uint8_t data)
 {
 		/* String to hold the ascii result */
 		char Result[17]; 

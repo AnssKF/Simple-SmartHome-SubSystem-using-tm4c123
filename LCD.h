@@ -68,8 +68,10 @@
 #ifndef LCD_H_
 #define LCD_H_
 
-#include "stdint.h"
+#include <stdint.h>
+#include "tm4c123gh6pm.h"
 #include "MACROS.h"
+#include "Port_Driver.h"
 
 /* HW Connections */
 #define  RS   5   //PA5
@@ -139,9 +141,9 @@ void _delay_ms(unsigned long msec);
 void Send_instruction(uint8_t instruction);
 void LCD_init(void);
 void LCD_Clear(void);
-void LCD_DisplayChar(int Data);
+void LCD_DisplayChar(uint8_t Data);
 void LCD_DisplayString(char * ptr);
-void LCD_Select_RowCol(int Row , int col);
+void LCD_Select_RowCol(uint8_t Row , uint8_t col);
 void LCD_DisplayInt(uint8_t data);
 char* itoa(int value, char* buffer, int base) ;
 void LCD_DisplayFloat (float data);
