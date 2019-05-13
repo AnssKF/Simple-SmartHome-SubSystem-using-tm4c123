@@ -143,6 +143,7 @@ void LCD_DisplayChar(int Data);
 void LCD_DisplayString(char * ptr);
 void LCD_Select_RowCol(int Row , int col);
 void LCD_DisplayInt(uint8_t data);
+char* itoa(int value, char* buffer, int base) ;
 void LCD_DisplayFloat (float data);
 
 #endif /* LCD_H_ */
