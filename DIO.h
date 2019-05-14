@@ -10,7 +10,7 @@ typedef enum{
     STD_HIGH, 
 }Dio_LevelType;
 
-uint8_t DIO_ReadPort(uint8_t port_index, uint8_t pins_mask, uint8_t pins_level);
+uint8_t DIO_ReadPort(uint8_t port_index, uint8_t pins_mask);
     /**
      * Return the value of the pins selected by pins_masks in the port selected by port_index
      */

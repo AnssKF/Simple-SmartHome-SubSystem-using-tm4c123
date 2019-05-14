@@ -254,7 +254,7 @@
          * -- enable pwm output
          */
 
-    void PWM_Write(PWM_PIN pwm_pin, uint16_t duty_cycle);
+    void PWM_Write(PWM_PIN pwm_pin, uint16_t duty_cycle,uint16_t load_value);
         /**
          * Set duty cycle for pwm_pin
          * -- set CMP register to corresponding value of duty cycle 
