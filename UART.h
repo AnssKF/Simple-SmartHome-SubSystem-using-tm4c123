@@ -1,29 +1,20 @@
-// U0Rx (VCP receive) connected to PA0
-// U0Tx (VCP transmit) connected to PA1
+#ifndef __UART_H__
+#define	__UART_H__
 
-// standard ASCII symbols
-#define CR   0x0D
-#define LF   0x0A
-#define BS   0x08
-#define ESC  0x1B
-#define SP   0x20
-#define DEL  0x7F
+#include <stdint.h>
+#include "tm4c123gh6pm.h"
 
-void UART_Init(void);
+void UART0_Init(void);
 
-char UART_InChar(void);
+uint8_t UART0_Available(void);
 
-void UART_OutChar(char data);
+uint8_t UART0_Read(void);
 
-void UART_OutString(char* pt);
+void UART0_Write(uint8_t data);
 
-uint32_t UART_InUDec(void);
+void UART_sendString(const uint8_t *Str);
 
-void UART_OutUDec(uint32_t n);
+void UART_receiveString(uint8_t *Str);
 
-uint32_t UART_InUHex(void);
 
-void UART_OutUHex(uint32_t number);
-
-void UART_InString(char* bufPt, uint16_t max);
-
+#endif // __UART_H__
