@@ -40,19 +40,6 @@ void DIO_FlipPort(uint8_t port_index, uint8_t pins_mask)
 }
 
 
-	switch (port_index)
-	{
-	case PORTA: GPIO_PORTA_DATA_R ^= pins_mask; break;
-	case PORTB: GPIO_PORTB_DATA_R ^= pins_mask; break;
-	case PORTC: GPIO_PORTC_DATA_R ^= pins_mask; break;
-	case PORTD: GPIO_PORTD_DATA_R ^= pins_mask; break;
-	case PORTE: GPIO_PORTE_DATA_R ^= pins_mask; break;
-	case PORTF: GPIO_PORTF_DATA_R ^= pins_mask; break;
-
-	}
-
-}
-
 void DIO_write_halfPort(uint8_t port_index, uint8_t upper_half, uint8_t data)
 {
         //uint8_t pins_mask = (upper_half)? 0xF0: 0x0F;
@@ -83,18 +70,18 @@ void DIO_write_halfPort(uint8_t port_index, uint8_t upper_half, uint8_t data)
 
 
 
-uint8_t DIO_ReadPort(uint8_t port_index, uint8_t pins_mask) 
+uint8_t DIO_ReadPort(uint8_t port_index, uint8_t pins_mask)
 {
     Port_SetPinDirection(port_index, pins_mask, PORT_PIN_IN);
 
     switch(port_index)
     {
-        case PORTA: return GPIO_PORTA_DATA_R & pins_mask; break;
-        case PORTB: return GPIO_PORTB_DATA_R & pins_mask; break;
-        case PORTC: return GPIO_PORTC_DATA_R & pins_mask; break;
-        case PORTD: return GPIO_PORTD_DATA_R & pins_mask; break;
-        case PORTE: return GPIO_PORTE_DATA_R & pins_mask; break;
-        case PORTF: return GPIO_PORTF_DATA_R & pins_mask; break; 
+        case PORTA: return (uint8_t) GPIO_PORTA_DATA_R & pins_mask; break;
+        case PORTB: return (uint8_t) GPIO_PORTB_DATA_R & pins_mask; break;
+        case PORTC: return (uint8_t) GPIO_PORTC_DATA_R & pins_mask; break;
+        case PORTD: return (uint8_t) GPIO_PORTD_DATA_R & pins_mask; break;
+        case PORTE: return (uint8_t) GPIO_PORTE_DATA_R & pins_mask; break;
+        case PORTF: return (uint8_t) GPIO_PORTF_DATA_R & pins_mask; break; 
         default: return 0; break;
     }
     return 0;
