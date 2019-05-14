@@ -158,6 +158,15 @@
     #define GPIO_PF1_PCTL_PWM_MODULE1_GEN2_B_M          GPIO_PCTL_PF1_M1PWM5
     #define GPIO_PF2_PCTL_PWM_MODULE1_GEN3_A_M          GPIO_PCTL_PF2_M1PWM6
     #define GPIO_PF3_PCTL_PWM_MODULE1_GEN3_B_M          GPIO_PCTL_PF3_M1PWM7
+    
+    #define PWM0EN                                      0x1
+    #define PWM1EN                                      0x2
+    #define PWM2EN                                      0x4
+    #define PWM3EN                                      0x8
+    #define PWM4EN                                      0x10
+    #define PWM5EN                                      0x20
+    #define PWM6EN                                      0x40
+    #define PWM7EN                                      0x80
 
     typedef enum{
         PWM_M0,
