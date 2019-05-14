@@ -513,7 +513,7 @@ void PWM_Gen_Init(PWM_MODULE pwm_module, PWM_GEN pwn_generator, PWM_DEVIDER pwm_
 
 //duty_cycle in percentage
 
-void PWM_Write(PWM_PIN pwm_pin,uint16_t duty_cycle)
+void PWM_Write(PWM_PIN pwm_pin,uint16_t duty_cycle,uint16_t load_value)
 {
     if(pwm_pin==PWM_PA6)
     {
@@ -529,7 +529,7 @@ void PWM_Write(PWM_PIN pwm_pin,uint16_t duty_cycle)
         }
         else
         {
-            PWM_MODULE1_GEN1_CMPA_R=(uint32_t)(load_value*(duty_cycle/100.0)-1);
+            PWM_MODULE1_GEN1_CMPA_R=(uint32_t)(load_value*((1-duty_cycle/100.0))-1);
         }
     }
 
@@ -709,7 +709,7 @@ void PWM_Write(PWM_PIN pwm_pin,uint16_t duty_cycle)
          PWM_MODULE1_GEN0_CMPA_R=(uint32_t)(load_value*(duty_cycle/100.0)-1);
       }
     }
-    else  if(pwm_pin==PWM_PE0_M0)
+    else  if(pwm_pin==PWM_PE4_M0)
     {
         PWM_MODULE0_GEN2_LOAD_R=load_value; 
       if(duty_cycle==100)
@@ -725,7 +725,7 @@ void PWM_Write(PWM_PIN pwm_pin,uint16_t duty_cycle)
          PWM_MODULE0_GEN2_CMPA_R=(uint32_t)(load_value*(duty_cycle/100.0)-1);
       }
     }
-    else  if(pwm_pin== PWM_PE0_M1)
+    else  if(pwm_pin== PWM_PE4_M1)
     {
         PWM_MODULE1_GEN1_LOAD_R=load_value; 
       if(duty_cycle==100)
@@ -741,7 +741,7 @@ void PWM_Write(PWM_PIN pwm_pin,uint16_t duty_cycle)
          PWM_MODULE1_GEN1_CMPA_R=(uint32_t)(load_value*(duty_cycle/100.0)-1);
       }
     }
-    else  if(pwm_pin== PWM_PE1_M0)
+    else  if(pwm_pin== PWM_PE5_M0)
     {
         PWM_MODULE0_GEN2_LOAD_R=load_value; 
       if(duty_cycle==100)
@@ -757,7 +757,7 @@ void PWM_Write(PWM_PIN pwm_pin,uint16_t duty_cycle)
          PWM_MODULE0_GEN2_CMPA_R=(uint32_t)(load_value*(duty_cycle/100.0)-1);
       }
     }
-    else  if(pwm_pin==PWM_PE1_M1)
+    else  if(pwm_pin==PWM_PE5_M1)
     {
         PWM_MODULE1_GEN1_LOAD_R=load_value; 
       if(duty_cycle==100)
@@ -826,7 +826,7 @@ void PWM_Write(PWM_PIN pwm_pin,uint16_t duty_cycle)
         PWM_MODULE1_GEN3_LOAD_R=load_value; 
       if(duty_cycle==100)
       {
-         PWM_MODULE1_GEN3_CMPA_R=1;
+        PWM_MODULE1_GEN3_CMPA_R =1;
       }
       else if(duty_cycle==0)
       {
