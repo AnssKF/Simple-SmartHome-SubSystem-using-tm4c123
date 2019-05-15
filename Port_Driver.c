@@ -64,13 +64,13 @@ void Port_Init(uint8_t port_index)
 
     case PORTF:
         GPIO_PORTF_LOCK_R = GPIO_LOCK_KEY; // Unlock register
-        GPIO_PORTF_CR_R |= 0x0f;           // GPIO Commit Register
-        GPIO_PORTF_DEN_R |= 0xff;          // PORTA Digital Enable for all port
-        GPIO_PORTF_AFSEL_R = 0;            // GPIO Alternate Function Select
-        GPIO_PORTF_PCTL_R = 0;             // GPIO specific peripheral Function
-        GPIO_PORTF_ADCCTL_R = 0;           // GPIO ADC Control
-        GPIO_PORTF_DMACTL_R = 0;           // GPIO DMA Control
-        GPIO_PORTF_AMSEL_R = 0;            // GPIO Analog Mode Select
+        GPIO_PORTF_CR_R |= 0x1f;           // GPIO Commit Register
+        GPIO_PORTF_DEN_R |= 0x1f;          // PORTA Digital Enable for all port
+        // GPIO_PORTF_AFSEL_R = 0;            // GPIO Alternate Function Select
+        // GPIO_PORTF_PCTL_R = 0;             // GPIO specific peripheral Function
+        // GPIO_PORTF_ADCCTL_R = 0;           // GPIO ADC Control
+        // GPIO_PORTF_DMACTL_R = 0;           // GPIO DMA Control
+        // GPIO_PORTF_AMSEL_R = 0;            // GPIO Analog Mode Select
         break;
 
     default:
