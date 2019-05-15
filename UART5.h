@@ -4,6 +4,8 @@
 #include <stdint.h>
 #include "tm4c123gh6pm.h"
 
+#include "DIO.h"
+
 void UART5_Init(void);
 
 uint8_t UART5_Available(void);

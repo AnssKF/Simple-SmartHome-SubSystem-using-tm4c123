@@ -1,18 +1,16 @@
-#include "uart.h"
+#include "UART5.h"
 
-#include "DIO.h"
+
 
 void UART5_Init(void){
 	SYSCTL_RCGCUART_R |= 0x20; //provide clock to uart5
 	SYSCTL_RCGCGPIO_R |= 0x10; //enable clock to PORTE
 	//UART5 initialaization
-	UART0_CTL_R =0; //disable UART5
-	UART0_IBRD_R = 520;    //int (80MHZ/16*9600)
-    UART0_FBRD_R = 53;     
-	// UART0_IBRD_R = 104;    
-    // UART0_FBRD_R = 11;
-	UART0_CC_R = 0;   //enable system clock as uart clock 
-	UART0_LCRH_R = 0x70; //no parity,enable FIFO,width=8bit,1-stop bit
+	UART5_CTL_R =0; //disable UART5
+	UART5_IBRD_R = 520;    //int (80MHZ/16*9600)
+    UART5_FBRD_R = 53;
+	UART5_CC_R = 0;   //enable system clock as uart clock 
+	UART5_LCRH_R = 0x70; //no parity,enable FIFO,width=8bit,1-stop bit
     UART5_CTL_R=0x301; //enable UART5,TXE and RXE
   //GPIO config
     GPIO_PORTE_AMSEL_R=0;    //disable analog function 
