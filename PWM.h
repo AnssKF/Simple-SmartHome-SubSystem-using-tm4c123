@@ -13,6 +13,7 @@
     #include "tm4c123gh6pm.h"
 
     #include "Port_Driver.h"
+    #include "DIO.h"
 
     /** Regidter mapping **/
 
