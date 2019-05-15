@@ -16,8 +16,8 @@ void PWM_Pin_Init(uint8_t port_index, PWM_PIN pwm_pin, PWM_DEVIDER pwm_devider, 
 
         // Init PWM generator for this pin
         PWM_Gen_Init(PWM_M1, PWM_G1_A, pwm_devider, pwm_output_state, load_value);
-        SET_MASK(PWM1_ENABLE_R,PWM2EN);
-    break;
+        SET_MASK(PWM1_ENABLE_R, PWM2EN);
+        break;
     case (PWM_PA7):
         // SET Alternative function for this pin to be PWM
         SET_MASK(GPIO_PORTA_AFSEL_R, PA7);
@@ -25,9 +25,9 @@ void PWM_Pin_Init(uint8_t port_index, PWM_PIN pwm_pin, PWM_DEVIDER pwm_devider, 
 
         // Init PWM generator for this pin
         PWM_Gen_Init(PWM_M1, PWM_G1_B, pwm_devider, pwm_output_state, load_value);
-        SET_MASK(PWM1_ENABLE_R,PWM3EN);
-        
-    break;
+        SET_MASK(PWM1_ENABLE_R, PWM3EN);
+
+        break;
 
         // ? PORT B
     case (PWM_PB4):
@@ -37,8 +37,8 @@ void PWM_Pin_Init(uint8_t port_index, PWM_PIN pwm_pin, PWM_DEVIDER pwm_devider, 
 
         // Init PWM generator for this pin
         PWM_Gen_Init(PWM_M0, PWM_G1_A, pwm_devider, pwm_output_state, load_value);
-        SET_MASK(PWM0_ENABLE_R,PWM2EN);
-    break;
+        SET_MASK(PWM0_ENABLE_R, PWM2EN);
+        break;
     case (PWM_PB5):
         // SET Alternative function for this pin to be PWM
         SET_MASK(GPIO_PORTB_AFSEL_R, PB5);
@@ -46,8 +46,8 @@ void PWM_Pin_Init(uint8_t port_index, PWM_PIN pwm_pin, PWM_DEVIDER pwm_devider, 
 
         // Init PWM generator for this pin
         PWM_Gen_Init(PWM_M0, PWM_G1_B, pwm_devider, pwm_output_state, load_value);
-        SET_MASK(PWM0_ENABLE_R,PWM3EN);
-    break;
+        SET_MASK(PWM0_ENABLE_R, PWM3EN);
+        break;
     case (PWM_PB6):
         // SET Alternative function for this pin to be PWM
         SET_MASK(GPIO_PORTB_AFSEL_R, PB6);
@@ -55,8 +55,8 @@ void PWM_Pin_Init(uint8_t port_index, PWM_PIN pwm_pin, PWM_DEVIDER pwm_devider, 
 
         // Init PWM generator for this pin
         PWM_Gen_Init(PWM_M0, PWM_G0_A, pwm_devider, pwm_output_state, load_value);
-        SET_MASK(PWM0_ENABLE_R,PWM0EN);
-    break;
+        SET_MASK(PWM0_ENABLE_R, PWM0EN);
+        break;
     case (PWM_PB7):
         // SET Alternative function for this pin to be PWM
         SET_MASK(GPIO_PORTB_AFSEL_R, PB7);
@@ -64,8 +64,8 @@ void PWM_Pin_Init(uint8_t port_index, PWM_PIN pwm_pin, PWM_DEVIDER pwm_devider, 
 
         // Init PWM generator for this pin
         PWM_Gen_Init(PWM_M0, PWM_G0_B, pwm_devider, pwm_output_state, load_value);
-        SET_MASK(PWM0_ENABLE_R,PWM1EN);
-    break;
+        SET_MASK(PWM0_ENABLE_R, PWM1EN);
+        break;
 
         // ? PORT C
     case (PWM_PC4):
@@ -75,8 +75,8 @@ void PWM_Pin_Init(uint8_t port_index, PWM_PIN pwm_pin, PWM_DEVIDER pwm_devider, 
 
         // Init PWM generator for this pin
         PWM_Gen_Init(PWM_M0, PWM_G3_A, pwm_devider, pwm_output_state, load_value);
-        SET_MASK(PWM0_ENABLE_R,PWM6EN);
-    break;
+        SET_MASK(PWM0_ENABLE_R, PWM6EN);
+        break;
     case (PWM_PC5):
         // SET Alternative function for this pin to be PWM
         SET_MASK(GPIO_PORTC_AFSEL_R, PC5);
@@ -84,8 +84,8 @@ void PWM_Pin_Init(uint8_t port_index, PWM_PIN pwm_pin, PWM_DEVIDER pwm_devider, 
 
         // Init PWM generator for this pin
         PWM_Gen_Init(PWM_M0, PWM_G3_B, pwm_devider, pwm_output_state, load_value);
-        SET_MASK(PWM0_ENABLE_R,PWM7EN);
-    break;
+        SET_MASK(PWM0_ENABLE_R, PWM7EN);
+        break;
 
         // ? PORT D
     case (PWM_PD0_M0):
@@ -95,8 +95,8 @@ void PWM_Pin_Init(uint8_t port_index, PWM_PIN pwm_pin, PWM_DEVIDER pwm_devider, 
 
         // Init PWM generator for this pin
         PWM_Gen_Init(PWM_M0, PWM_G3_A, pwm_devider, pwm_output_state, load_value);
-        SET_MASK(PWM0_ENABLE_R,PWM6EN);
-    break;
+        SET_MASK(PWM0_ENABLE_R, PWM6EN);
+        break;
     case (PWM_PD0_M1):
         // SET Alternative function for this pin to be PWM
         SET_MASK(GPIO_PORTD_AFSEL_R, PD0);
@@ -104,8 +104,8 @@ void PWM_Pin_Init(uint8_t port_index, PWM_PIN pwm_pin, PWM_DEVIDER pwm_devider, 
 
         // Init PWM generator for this pin
         PWM_Gen_Init(PWM_M1, PWM_G0_A, pwm_devider, pwm_output_state, load_value);
-        SET_MASK(PWM1_ENABLE_R,PWM0EN);
-    break;
+        SET_MASK(PWM1_ENABLE_R, PWM0EN);
+        break;
     case (PWM_PD1_M0):
         // SET Alternative function for this pin to be PWM
         SET_MASK(GPIO_PORTD_AFSEL_R, PD1);
@@ -113,8 +113,8 @@ void PWM_Pin_Init(uint8_t port_index, PWM_PIN pwm_pin, PWM_DEVIDER pwm_devider, 
 
         // Init PWM generator for this pin
         PWM_Gen_Init(PWM_M0, PWM_G3_B, pwm_devider, pwm_output_state, load_value);
-        SET_MASK(PWM0_ENABLE_R,PWM7EN);
-    break;
+        SET_MASK(PWM0_ENABLE_R, PWM7EN);
+        break;
     case (PWM_PD1_M1):
         // SET Alternative function for this pin to be PWM
         SET_MASK(GPIO_PORTD_AFSEL_R, PD1);
@@ -122,8 +122,8 @@ void PWM_Pin_Init(uint8_t port_index, PWM_PIN pwm_pin, PWM_DEVIDER pwm_devider, 
 
         // Init PWM generator for this pin
         PWM_Gen_Init(PWM_M1, PWM_G0_B, pwm_devider, pwm_output_state, load_value);
-        SET_MASK(PWM1_ENABLE_R,PWM1EN);
-    break;
+        SET_MASK(PWM1_ENABLE_R, PWM1EN);
+        break;
 
         // ? PORT E
     case (PWM_PE4_M0):
@@ -133,8 +133,8 @@ void PWM_Pin_Init(uint8_t port_index, PWM_PIN pwm_pin, PWM_DEVIDER pwm_devider, 
 
         // Init PWM generator for this pin
         PWM_Gen_Init(PWM_M0, PWM_G2_A, pwm_devider, pwm_output_state, load_value);
-        SET_MASK(PWM0_ENABLE_R,PWM4EN);
-    break;
+        SET_MASK(PWM0_ENABLE_R, PWM4EN);
+        break;
     case (PWM_PE4_M1):
         // SET Alternative function for this pin to be PWM
         SET_MASK(GPIO_PORTE_AFSEL_R, PE4);
@@ -142,8 +142,8 @@ void PWM_Pin_Init(uint8_t port_index, PWM_PIN pwm_pin, PWM_DEVIDER pwm_devider, 
 
         // Init PWM generator for this pin
         PWM_Gen_Init(PWM_M1, PWM_G1_A, pwm_devider, pwm_output_state, load_value);
-        SET_MASK(PWM1_ENABLE_R,PWM2EN);
-    break;
+        SET_MASK(PWM1_ENABLE_R, PWM2EN);
+        break;
     case (PWM_PE5_M0):
         // SET Alternative function for this pin to be PWM
         SET_MASK(GPIO_PORTE_AFSEL_R, PE5);
@@ -151,16 +151,16 @@ void PWM_Pin_Init(uint8_t port_index, PWM_PIN pwm_pin, PWM_DEVIDER pwm_devider, 
 
         // Init PWM generator for this pin
         PWM_Gen_Init(PWM_M0, PWM_G2_B, pwm_devider, pwm_output_state, load_value);
-        SET_MASK(PWM0_ENABLE_R,PWM5EN);
-    break;
+        SET_MASK(PWM0_ENABLE_R, PWM5EN);
+        break;
     case (PWM_PE5_M1):
         SET_MASK(GPIO_PORTE_AFSEL_R, PE5);
         SET_MASK(GPIO_PORTE_PCTL_R, GPIO_PE5_PCTL_PWM_MODULE1_GEN1_B_M);
 
         // Init PWM generator for this pin
         PWM_Gen_Init(PWM_M1, PWM_G1_B, pwm_devider, pwm_output_state, load_value);
-        SET_MASK(PWM1_ENABLE_R,PWM3EN);
-    break;
+        SET_MASK(PWM1_ENABLE_R, PWM3EN);
+        break;
 
         // ? PORT F
     case (PWM_PF0):
@@ -169,42 +169,43 @@ void PWM_Pin_Init(uint8_t port_index, PWM_PIN pwm_pin, PWM_DEVIDER pwm_devider, 
 
         // Init PWM generator for this pin
         PWM_Gen_Init(PWM_M1, PWM_G2_A, pwm_devider, pwm_output_state, load_value);
-        SET_MASK(PWM1_ENABLE_R,PWM4EN);
-    break;
+        SET_MASK(PWM1_ENABLE_R, PWM4EN);
+        break;
     case (PWM_PF1):
         SET_MASK(GPIO_PORTF_AFSEL_R, PF1);
         SET_MASK(GPIO_PORTF_PCTL_R, GPIO_PF1_PCTL_PWM_MODULE1_GEN2_B_M);
 
         // Init PWM generator for this pin
         PWM_Gen_Init(PWM_M1, PWM_G2_B, pwm_devider, pwm_output_state, load_value);
-        SET_MASK(PWM1_ENABLE_R,PWM5EN);
-    break;
+        SET_MASK(PWM1_ENABLE_R, PWM5EN);
+        break;
     case (PWM_PF2):
         SET_MASK(GPIO_PORTF_AFSEL_R, PF2);
         SET_MASK(GPIO_PORTF_PCTL_R, GPIO_PF2_PCTL_PWM_MODULE1_GEN3_A_M);
 
         // Init PWM generator for this pin
         PWM_Gen_Init(PWM_M1, PWM_G3_A, pwm_devider, pwm_output_state, load_value);
-        SET_MASK(PWM1_ENABLE_R,PWM6EN);
-    break;
+        SET_MASK(PWM1_ENABLE_R, PWM6EN);
+        break;
     case (PWM_PF3):
         SET_MASK(GPIO_PORTF_AFSEL_R, PF3);
         SET_MASK(GPIO_PORTF_PCTL_R, GPIO_PF3_PCTL_PWM_MODULE1_GEN3_B_M);
 
         // Init PWM generator for this pin
         PWM_Gen_Init(PWM_M1, PWM_G3_B, pwm_devider, pwm_output_state, load_value);
-        SET_MASK(PWM1_ENABLE_R,PWM7EN);
-    break;
-    
+        SET_MASK(PWM1_ENABLE_R, PWM7EN);
+        break;
+
     default:
         break;
     }
 }
 
-void PWM_Gen_Init(PWM_MODULE pwm_module, PWM_GEN pwn_generator, PWM_DEVIDER pwm_devider, PWM_OUTPUT_STATE pwm_output_state, uint16_t load_value){
-    SET_MASK(SYSCTL_RCGC0_R,0x100000);//run mode clock ->pwm
-    
-    SET_MASK(PWM_CLK_DEVIDER_CTL_R,PWM_CLK_DEVIDER_EN_M);
+void PWM_Gen_Init(PWM_MODULE pwm_module, PWM_GEN pwn_generator, PWM_DEVIDER pwm_devider, PWM_OUTPUT_STATE pwm_output_state, uint16_t load_value)
+{
+    SET_MASK(SYSCTL_RCGC0_R, 0x100000); //run mode clock ->pwm
+
+    SET_MASK(PWM_CLK_DEVIDER_CTL_R, PWM_CLK_DEVIDER_EN_M);
     switch (pwm_devider)
     {
     case PWM_DEV_BY_2:
@@ -530,336 +531,111 @@ void PWM_Gen_Init(PWM_MODULE pwm_module, PWM_GEN pwn_generator, PWM_DEVIDER pwm_
     }
 }
 
-
 //duty_cycle in percentage
 
-void PWM_Write(PWM_PIN pwm_pin,uint16_t duty_cycle,uint16_t load_value)
+void PWM_Write(PWM_PIN pwm_pin, uint16_t duty_cycle)
 {
-    if(pwm_pin==PWM_PA6)
+    uint16_t load_value;
+
+    if (pwm_pin == PWM_PA6)
     {
-      PWM_MODULE1_GEN1_LOAD_R=load_value;  
-     
-        if(duty_cycle==100)
-        {
-         PWM_MODULE1_GEN1_CMPA_R=1;//100%//max
-        }
-        else if(duty_cycle==0)
-        {
-         PWM_MODULE1_GEN1_CMPA_R=load_value-1;//0%//min
-        }
-        else
-        {
-            PWM_MODULE1_GEN1_CMPA_R=(uint32_t)(load_value*((1-duty_cycle/100.0))-1);
-        }
+        load_value = PWM_MODULE1_GEN1_LOAD_R;
+        PWM_MODULE1_GEN1_CMPA_R |= (duty_cycle == 100) ? 0x0001 : (duty_cycle == 0) ? (uint16_t)(load_value - 1) : (uint16_t)(load_value * ((duty_cycle / 100.0)) - 1);
     }
 
-    else if(pwm_pin==PWM_PA7)
+    else if (pwm_pin == PWM_PA7)
     {
-        PWM_MODULE1_GEN1_LOAD_R=load_value; 
-      if(duty_cycle==100)
-      {
-         PWM_MODULE1_GEN1_CMPA_R=1;
-      }
-      else if(duty_cycle==0)
-      {
-         PWM_MODULE1_GEN1_CMPA_R=load_value-1;
-      }
-      else
-      {
-         PWM_MODULE1_GEN1_CMPA_R=(uint32_t)(load_value*(duty_cycle/100.0)-1);
-      }
+        load_value = PWM_MODULE1_GEN1_LOAD_R;
+        PWM_MODULE1_GEN1_CMPB_R |= (duty_cycle == 100) ? 0x0001 : (duty_cycle == 0) ? (uint16_t)(load_value - 1) : (uint16_t)(load_value * ((duty_cycle / 100.0)) - 1);
     }
-    else if(pwm_pin==PWM_PB4)
+    else if (pwm_pin == PWM_PB4)
     {
-        PWM_MODULE0_GEN1_LOAD_R=load_value; 
-      if(duty_cycle==100)
-      {
-         PWM_MODULE0_GEN1_CMPA_R=1;
-      }
-      else if(duty_cycle==0)
-      {
-         PWM_MODULE0_GEN1_CMPA_R=load_value-1;
-      }
-      else
-      {
-         PWM_MODULE0_GEN1_CMPA_R=(uint32_t)(load_value*(duty_cycle/100.0)-1);
-      }
+        load_value = PWM_MODULE0_GEN1_LOAD_R;
+        PWM_MODULE0_GEN1_CMPA_R |= (duty_cycle == 100) ? 0x0001 : (duty_cycle == 0) ? (uint16_t)(load_value - 1) : (uint16_t)(load_value * ((duty_cycle / 100.0)) - 1);
     }
-    else  if(pwm_pin==PWM_PB5)
+    else if (pwm_pin == PWM_PB5)
     {
-        PWM_MODULE0_GEN1_LOAD_R=load_value; 
-      if(duty_cycle==100)
-      {
-         PWM_MODULE0_GEN1_CMPA_R=1;
-      }
-      else if(duty_cycle==0)
-      {
-         PWM_MODULE0_GEN1_CMPA_R=load_value-1;
-      }
-      else
-      {
-         PWM_MODULE0_GEN1_CMPA_R=(uint32_t)(load_value*(duty_cycle/100.0)-1);
-      }
+        load_value = PWM_MODULE0_GEN1_LOAD_R;
+        PWM_MODULE0_GEN1_CMPB_R |= (duty_cycle == 100) ? 0x0001 : (duty_cycle == 0) ? (uint16_t)(load_value - 1) : (uint16_t)(load_value * ((duty_cycle / 100.0)) - 1);
     }
-    else  if(pwm_pin==PWM_PB6)
+    else if (pwm_pin == PWM_PB6)
     {
-        PWM_MODULE0_GEN0_LOAD_R=load_value; 
-      if(duty_cycle==100)
-      {
-         PWM_MODULE0_GEN0_CMPA_R=1;
-      }
-      else if(duty_cycle==0)
-      {
-         PWM_MODULE0_GEN0_CMPA_R=load_value-1;
-      }
-      else
-      {
-         PWM_MODULE0_GEN0_CMPA_R=(uint32_t)(load_value*(duty_cycle/100.0)-1);
-      }
+        load_value = PWM_MODULE0_GEN0_LOAD_R;
+        PWM_MODULE0_GEN0_CMPA_R |= (duty_cycle == 100) ? 0x0001 : (duty_cycle == 0) ? (uint16_t)(load_value - 1) : (uint16_t)(load_value * ((duty_cycle / 100.0)) - 1);
     }
-    else  if(pwm_pin==PWM_PB7)
+    else if (pwm_pin == PWM_PB7)
     {
-        PWM_MODULE0_GEN0_LOAD_R=load_value; 
-      if(duty_cycle==100)
-      {
-         PWM_MODULE0_GEN0_CMPA_R=1;
-      }
-      else if(duty_cycle==0)
-      {
-         PWM_MODULE0_GEN0_CMPA_R=load_value-1;
-      }
-      else
-      {
-         PWM_MODULE0_GEN0_CMPA_R=(uint32_t)(load_value*(duty_cycle/100.0)-1);
-      }
+        load_value = PWM_MODULE0_GEN0_LOAD_R;
+        PWM_MODULE0_GEN0_CMPB_R |= (duty_cycle == 100) ? 0x0001 : (duty_cycle == 0) ? (uint16_t)(load_value - 1) : (uint16_t)(load_value * ((duty_cycle / 100.0)) - 1);
     }
-    else  if(pwm_pin==PWM_PC4)
+    else if (pwm_pin == PWM_PC4)
     {
-        PWM_MODULE0_GEN3_LOAD_R=load_value; 
-      if(duty_cycle==100)
-      {
-         PWM_MODULE0_GEN3_CMPA_R=1;
-      }
-      else if(duty_cycle==0)
-      {
-         PWM_MODULE0_GEN3_CMPA_R=load_value-1;
-      }
-      else
-      {
-         PWM_MODULE0_GEN3_CMPA_R=(uint32_t)(load_value*(duty_cycle/100.0)-1);
-      }
+        load_value = PWM_MODULE0_GEN3_LOAD_R;
+        PWM_MODULE0_GEN3_CMPA_R |= (duty_cycle == 100) ? 0x0001 : (duty_cycle == 0) ? (uint16_t)(load_value - 1) : (uint16_t)(load_value * ((duty_cycle / 100.0)) - 1);
     }
-    else  if(pwm_pin==PWM_PC5)
+    else if (pwm_pin == PWM_PC5)
     {
-        PWM_MODULE0_GEN3_LOAD_R=load_value; 
-      if(duty_cycle==100)
-      {
-         PWM_MODULE0_GEN3_CMPA_R=1;
-      }
-      else if(duty_cycle==0)
-      {
-         PWM_MODULE0_GEN3_CMPA_R=load_value-1;
-      }
-      else
-      {
-         PWM_MODULE0_GEN3_CMPA_R=(uint32_t)(load_value*(duty_cycle/100.0)-1);
-      }
+        load_value = PWM_MODULE0_GEN3_LOAD_R;
+        PWM_MODULE0_GEN3_CMPB_R |= (duty_cycle == 100) ? 0x0001 : (duty_cycle == 0) ? (uint16_t)(load_value - 1) : (uint16_t)(load_value * ((duty_cycle / 100.0)) - 1);
     }
-    else if(pwm_pin==PWM_PD0_M0)
+    else if (pwm_pin == PWM_PD0_M0)
     {
-        PWM_MODULE0_GEN3_LOAD_R=load_value; 
-      if(duty_cycle==100)
-      {
-         PWM_MODULE0_GEN3_CMPA_R=1;
-      }
-      else if(duty_cycle==0)
-      {
-         PWM_MODULE0_GEN3_CMPA_R=load_value-1;
-      }
-      else
-      {
-         PWM_MODULE0_GEN3_CMPA_R=(uint32_t)(load_value*(duty_cycle/100.0)-1);
-      }
+        load_value = PWM_MODULE0_GEN3_LOAD_R;
+        PWM_MODULE0_GEN3_CMPA_R |= (duty_cycle == 100) ? 0x0001 : (duty_cycle == 0) ? (uint16_t)(load_value - 1) : (uint16_t)(load_value * ((duty_cycle / 100.0)) - 1);
     }
-    else if(pwm_pin==PWM_PD0_M1)
+    else if (pwm_pin == PWM_PD0_M1)
     {
-        PWM_MODULE1_GEN0_LOAD_R=load_value; 
-      if(duty_cycle==100)
-      {
-         PWM_MODULE1_GEN0_CMPA_R=1;
-      }
-      else if(duty_cycle==0)
-      {
-         PWM_MODULE1_GEN0_CMPA_R=load_value-1;
-      }
-      else
-      {
-         PWM_MODULE1_GEN0_CMPA_R=(uint32_t)(load_value*(duty_cycle/100.0)-1);
-      }
+        load_value = PWM_MODULE1_GEN0_LOAD_R;
+        PWM_MODULE1_GEN0_CMPA_R |= (duty_cycle == 100) ? 0x0001 : (duty_cycle == 0) ? (uint16_t)(load_value - 1) : (uint16_t)(load_value * ((duty_cycle / 100.0)) - 1);
     }
-    else if(pwm_pin==PWM_PD1_M0)
+    else if (pwm_pin == PWM_PD1_M0)
     {
-        PWM_MODULE0_GEN3_LOAD_R=load_value; 
-      if(duty_cycle==100)
-      {
-         PWM_MODULE0_GEN3_CMPA_R=1;
-      }
-      else if(duty_cycle==0)
-      {
-         PWM_MODULE0_GEN3_CMPA_R=load_value-1;
-      }
-      else
-      {
-         PWM_MODULE0_GEN3_CMPA_R=(uint32_t)(load_value*(duty_cycle/100.0)-1);
-      }
+        load_value = PWM_MODULE0_GEN3_LOAD_R;
+        PWM_MODULE0_GEN3_CMPB_R |= (duty_cycle == 100) ? 0x0001 : (duty_cycle == 0) ? (uint16_t)(load_value - 1) : (uint16_t)(load_value * ((duty_cycle / 100.0)) - 1);
     }
-    else  if(pwm_pin==PWM_PD1_M1)
+    else if (pwm_pin == PWM_PD1_M1)
     {
-        PWM_MODULE1_GEN0_LOAD_R=load_value; 
-      if(duty_cycle==100)
-      {
-         PWM_MODULE1_GEN0_CMPA_R=1;
-      }
-      else if(duty_cycle==0)
-      {
-         PWM_MODULE1_GEN0_CMPA_R=load_value-1;
-      }
-      else
-      {
-         PWM_MODULE1_GEN0_CMPA_R=(uint32_t)(load_value*(duty_cycle/100.0)-1);
-      }
+        load_value = PWM_MODULE1_GEN0_LOAD_R;
+        PWM_MODULE1_GEN0_CMPB_R |= (duty_cycle == 100) ? 0x0001 : (duty_cycle == 0) ? (uint16_t)(load_value - 1) : (uint16_t)(load_value * ((duty_cycle / 100.0)) - 1);
     }
-    else  if(pwm_pin==PWM_PE4_M0)
+    else if (pwm_pin == PWM_PE4_M0)
     {
-        PWM_MODULE0_GEN2_LOAD_R=load_value; 
-      if(duty_cycle==100)
-      {
-         PWM_MODULE0_GEN2_CMPA_R=1;
-      }
-      else if(duty_cycle==0)
-      {
-         PWM_MODULE0_GEN2_CMPA_R=load_value-1;
-      }
-      else
-      {
-         PWM_MODULE0_GEN2_CMPA_R=(uint32_t)(load_value*(duty_cycle/100.0)-1);
-      }
+        load_value = PWM_MODULE0_GEN2_LOAD_R;
+        PWM_MODULE0_GEN2_CMPA_R |= (duty_cycle == 100) ? 0x0001 : (duty_cycle == 0) ? (uint16_t)(load_value - 1) : (uint16_t)(load_value * ((duty_cycle / 100.0)) - 1);
     }
-    else  if(pwm_pin== PWM_PE4_M1)
+    else if (pwm_pin == PWM_PE4_M1)
     {
-        PWM_MODULE1_GEN1_LOAD_R=load_value; 
-      if(duty_cycle==100)
-      {
-         PWM_MODULE1_GEN1_CMPA_R=1;
-      }
-      else if(duty_cycle==0)
-      {
-         PWM_MODULE1_GEN1_CMPA_R=load_value-1;
-      }
-      else
-      {
-         PWM_MODULE1_GEN1_CMPA_R=(uint32_t)(load_value*(duty_cycle/100.0)-1);
-      }
+        load_value = PWM_MODULE1_GEN1_LOAD_R;
+        PWM_MODULE1_GEN1_CMPA_R |= (duty_cycle == 100) ? 0x0001 : (duty_cycle == 0) ? (uint16_t)(load_value - 1) : (uint16_t)(load_value * ((duty_cycle / 100.0)) - 1);
     }
-    else  if(pwm_pin== PWM_PE5_M0)
+    else if (pwm_pin == PWM_PE5_M0)
     {
-        PWM_MODULE0_GEN2_LOAD_R=load_value; 
-      if(duty_cycle==100)
-      {
-         PWM_MODULE0_GEN2_CMPA_R=1;
-      }
-      else if(duty_cycle==0)
-      {
-         PWM_MODULE0_GEN2_CMPA_R=load_value-1;
-      }
-      else
-      {
-         PWM_MODULE0_GEN2_CMPA_R=(uint32_t)(load_value*(duty_cycle/100.0)-1);
-      }
+        load_value = PWM_MODULE0_GEN2_LOAD_R;
+        PWM_MODULE0_GEN2_CMPB_R |= (duty_cycle == 100) ? 0x0001 : (duty_cycle == 0) ? (uint16_t)(load_value - 1) : (uint16_t)(load_value * ((duty_cycle / 100.0)) - 1);
     }
-    else  if(pwm_pin==PWM_PE5_M1)
+    else if (pwm_pin == PWM_PE5_M1)
     {
-        PWM_MODULE1_GEN1_LOAD_R=load_value; 
-      if(duty_cycle==100)
-      {
-         PWM_MODULE1_GEN1_CMPA_R=1;
-      }
-      else if(duty_cycle==0)
-      {
-         PWM_MODULE1_GEN1_CMPA_R=load_value-1;
-      }
-      else
-      {
-         PWM_MODULE1_GEN1_CMPA_R=(uint32_t)(load_value*(duty_cycle/100.0)-1);
-      }
+        load_value = PWM_MODULE1_GEN1_LOAD_R;
+        PWM_MODULE1_GEN1_CMPB_R |= (duty_cycle == 100) ? 0x0001 : (duty_cycle == 0) ? (uint16_t)(load_value - 1) : (uint16_t)(load_value * ((duty_cycle / 100.0)) - 1);
     }
-      else  if(pwm_pin==PWM_PF0)
+    else if (pwm_pin == PWM_PF0)
     {
-        PWM_MODULE1_GEN2_LOAD_R=load_value; 
-      if(duty_cycle==100)
-      {
-         PWM_MODULE1_GEN2_CMPA_R=1;
-      }
-      else if(duty_cycle==0)
-      {
-         PWM_MODULE1_GEN2_CMPA_R=load_value-1;
-      }
-      else
-      {
-         PWM_MODULE1_GEN2_CMPA_R=(uint32_t)(load_value*(duty_cycle/100.0)-1);
-      }
+        load_value = PWM_MODULE1_GEN2_LOAD_R;
+        PWM_MODULE1_GEN2_CMPA_R |= (duty_cycle == 100) ? 0x0001 : (duty_cycle == 0) ? (uint16_t)(load_value - 1) : (uint16_t)(load_value * ((duty_cycle / 100.0)) - 1);
     }
-    else  if(pwm_pin==PWM_PF1)
+    else if (pwm_pin == PWM_PF1)
     {
-        PWM_MODULE1_GEN2_LOAD_R=load_value; 
-      if(duty_cycle==100)
-      {
-         PWM_MODULE1_GEN2_CMPA_R=1;
-      }
-      else if(duty_cycle==0)
-      {
-         PWM_MODULE1_GEN2_CMPA_R=load_value-1;
-      }
-      else
-      {
-         PWM_MODULE1_GEN2_CMPA_R=(uint32_t)(load_value*(duty_cycle/100.0)-1);
-      }
+        load_value = PWM_MODULE1_GEN2_LOAD_R;
+        PWM_MODULE1_GEN2_CMPB_R |= (duty_cycle == 100) ? 0x0001 : (duty_cycle == 0) ? (uint16_t)(load_value - 1) : (uint16_t)(load_value * ((duty_cycle / 100.0)) - 1);
     }
-    else  if(pwm_pin==PWM_PF2)
+    else if (pwm_pin == PWM_PF2)
     {
-        PWM_MODULE1_GEN3_LOAD_R=load_value; 
-      if(duty_cycle==100)
-      {
-         PWM_MODULE1_GEN3_CMPA_R=1;
-      }
-      else if(duty_cycle==0)
-      {
-         PWM_MODULE1_GEN3_CMPA_R=load_value-1;
-      }
-      else
-      {
-         PWM_MODULE1_GEN3_CMPA_R=(uint32_t)(load_value*(duty_cycle/100.0)-1);
-      }
+        load_value = PWM_MODULE1_GEN3_LOAD_R;
+        PWM_MODULE1_GEN3_CMPA_R |= (duty_cycle == 100) ? 0x0001 : (duty_cycle == 0) ? (uint16_t)(load_value - 1) : (uint16_t)(load_value * ((duty_cycle / 100.0)) - 1);
     }
-    else  if(pwm_pin==PWM_PF3)
+    else if (pwm_pin == PWM_PF3)
     {
-        PWM_MODULE1_GEN3_LOAD_R=load_value; 
-      if(duty_cycle==100)
-      {
-        PWM_MODULE1_GEN3_CMPA_R =1;
-      }
-      else if(duty_cycle==0)
-      {
-         PWM_MODULE1_GEN3_CMPA_R=load_value-1;
-      }
-      else
-      {
-         PWM_MODULE1_GEN3_CMPA_R=(uint32_t)(load_value*(duty_cycle/100.0)-1);
-      }
+        load_value = PWM_MODULE1_GEN3_LOAD_R;
+        PWM_MODULE1_GEN3_CMPB_R |= (duty_cycle == 100) ? 0x0001 : (duty_cycle == 0) ? (uint16_t)(load_value - 1) : (uint16_t)(load_value * ((duty_cycle / 100.0)) - 1);
     }
 }
-
-
-
-
-
