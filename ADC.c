@@ -198,3 +198,13 @@ void ADC1_SEL_IN(uint32_t CH_MUSK,  enum SEQn seqN)
       break;
     }
 }
+
+float Distance_Value(uint32_t FIFOn) //ADC0_SSFIFO3_R
+{
+	return 0.495*FIFOn + 144;
+}
+
+float Tempreature_Value(uint32_t FIFOn) //ADC0_SSFIFO3_R
+{
+	return (147.5 - (247.5*FIFOn)/4096);
+}
