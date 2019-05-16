@@ -265,7 +265,7 @@ void LCD_Select_RowCol(uint8_t Row , uint8_t col)
 		{
 			case 0:
 					/* When Writing To LCD 1st Col The Base Address is 0x00 */
-						Address=col | LCD_1ST_BASE;
+						Address = col | LCD_1ST_BASE;
 						break;
 			case 1:
 					/* When Writing To LCD 2nd Col The Base Address is 0x40 */
