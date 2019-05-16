@@ -26,6 +26,7 @@ void ADC1_TAKE_SAMPLE(uint8_t seq_musk);// Start a new conversion
 
 float Tempreature_Value(uint32_t FIFOn); /* Get the Tempreature Value */
 
+float Distance_Value(uint32_t FIFOn);/* Get the Distance Value */
 
 /*************************************************************** LOW LEVEL FUNCTIONS ***************************************************************/
 
