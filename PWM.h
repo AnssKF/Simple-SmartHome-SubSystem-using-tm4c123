@@ -13,6 +13,7 @@
     #include "tm4c123gh6pm.h"
 
     #include "Port_Driver.h"
+    #include "DIO.h"
 
     /** Regidter mapping **/
 
@@ -254,7 +255,7 @@
          * -- enable pwm output
          */
 
-    void PWM_Write(PWM_PIN pwm_pin, uint16_t duty_cycle,uint16_t load_value);
+    void PWM_Write(PWM_PIN pwm_pin, uint16_t duty_cycle);
         /**
          * Set duty cycle for pwm_pin
          * -- set CMP register to corresponding value of duty cycle 
