@@ -12,6 +12,9 @@
     #include <stdint.h>
     #include "tm4c123gh6pm.h"
 
+    #include "Port_Driver.h"
+    #include "DIO.h"
+
     /** Regidter mapping **/
 
     // CLK enable
@@ -89,6 +92,9 @@
     #define PWM_GEN_CTL_INVERT_M                        0x1 // Invert PWM
     #define PWM_GEN_CTL_DRIVE_LOW_M                     0x2 // Drive Low
     #define PWM_GEN_CTL_DRIVE_HIGH_M                    0x3 // Drive High
+    //register values
+    #define High_on_Load_Low_Match                      0x8D
+    #define Low_on_Load_High_Match                      0xD8 //not sure :'
 
     // Load reg
     #define PWM_MODULE0_GEN0_LOAD_R                     PWM0_0_LOAD_R
@@ -153,6 +159,15 @@
     #define GPIO_PF1_PCTL_PWM_MODULE1_GEN2_B_M          GPIO_PCTL_PF1_M1PWM5
     #define GPIO_PF2_PCTL_PWM_MODULE1_GEN3_A_M          GPIO_PCTL_PF2_M1PWM6
     #define GPIO_PF3_PCTL_PWM_MODULE1_GEN3_B_M          GPIO_PCTL_PF3_M1PWM7
+    
+    #define PWM0EN                                      0x1
+    #define PWM1EN                                      0x2
+    #define PWM2EN                                      0x4
+    #define PWM3EN                                      0x8
+    #define PWM4EN                                      0x10
+    #define PWM5EN                                      0x20
+    #define PWM6EN                                      0x40
+    #define PWM7EN                                      0x80
 
     typedef enum{
         PWM_M0,
@@ -210,10 +225,10 @@
         PWM_PD1_M0,
         PWM_PD1_M1,
         
-        PWM_PE0_M0,
-        PWM_PE0_M1,
-        PWM_PE1_M0,
-        PWM_PE1_M1,
+        PWM_PE4_M0,
+        PWM_PE4_M1,
+        PWM_PE5_M0,
+        PWM_PE5_M1,
 
         PWM_PF0,
         PWM_PF1,
@@ -229,7 +244,7 @@
          * -- GPIO pin using Port_Driver and set AFSEL for this pin
          */
 
-    void PWM_Gen_Init(PWM_MODULE pwm_module, PWM_GEN pwn_generator, PWM_DEVIDER pwm_devider, uint16_t load_value);
+    void PWM_Gen_Init(PWM_MODULE pwm_module, PWM_GEN pwn_generator, PWM_DEVIDER pwm_devider, PWM_OUTPUT_STATE pwm_output_state, uint16_t load_value);
         /**
          * This function only initialize PWM generator
          * -- initialize module clk

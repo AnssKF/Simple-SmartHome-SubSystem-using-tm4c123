@@ -1,12 +1,22 @@
-#ifndef _UART5_H_
-#define _UART5_H_
+#ifndef __UART5_H__
+#define	__UART5_H__
 
-#include "stdint.h"
+#include <stdint.h>
+#include "tm4c123gh6pm.h"
 
-void UART5_init(void);
+#include "DIO.h"
 
-uint8_t UART5_Rx(void);
+void UART5_Init(void);
 
-void UART5_Tx(uint8_t c);
+uint8_t UART5_Available(void);
 
-#endif
+uint8_t UART5_Read(void);
+
+void UART5_Write(uint8_t data);
+
+void UART5_sendString(const uint8_t *Str);
+
+void UART5_receiveString(uint8_t *Str);
+
+
+#endif // __UART5_H__
