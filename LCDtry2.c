@@ -74,7 +74,7 @@ void LCD_Clear(void)
     LCD_Send_instruction(Clear_Display); 
 }
 
-void LCD_Coursor_Position_On_Display (uint8_t Row , uint8_t col)
+void LCD_Coursor_Position (uint8_t Row , uint8_t col)
 {
 	uint8_t Address=0;
 	
