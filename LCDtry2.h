@@ -9,21 +9,24 @@
 #include "DIO.h"
 //-----------------------test1pins----------------------
 //used ports
+/*
 #define RS                 PA5   
 #define RW                 PA6   
 #define E                  PA7   
 #define Data_PORT          PORTB
 #define CTRL_PORT          PORTA
 
+*/
+
 //------------------------test2pins----------------------
-/*
+
 #define RS                 PE0   
 #define RW                 PE1   
 #define E                  PE2   
 #define Data_PORT          PORTB
 #define CTRL_PORT          PORTE
 
-*/
+
 
 //-----------------------------------------------
 

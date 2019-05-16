@@ -157,17 +157,25 @@ void LCD_Display_Int(uint16_t data)
 }
 
 
-void _delay_ms(unsigned long msec) {
-    unsigned long count; // declare count down variable
+// void _delay_ms(unsigned long msec) {
+//     unsigned long count; // declare count down variable
  
-    while (msec) {
-        count = 15913;   // 15913 for simulation and 11934 for the real board
+//     while (msec) {
+//         count = 15913;   // 15913 for simulation and 11934 for the real board
  
-        while (count) {
-            count--;     // when counting down is finished, it takes 0.999875ms
-        }
-        msec--;          // count down the number of milliseconds you want
-    }
+//         while (count) {
+//             count--;     // when counting down is finished, it takes 0.999875ms
+//         }
+//         msec--;          // count down the number of milliseconds you want
+//     }
+// }
+
+void _delay_ms(int n)
+{
+	int i,j;
+	for(i=0;i<n;i++)
+	for(j=0;j<3180;j++)
+	{}
 }
 
 
